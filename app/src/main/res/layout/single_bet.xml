@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#2e3139">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_fav"
+        app:srcCompat="@drawable/ic_grade_black_24dp"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/bet_outcome"
+        android:src="@drawable/bet_outcome_win"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:textColor="#FEFEFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:text="5-0"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/bet_outcome" />
+
+    <TextView
+        android:textColor="#FEFEFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result: "
+        android:layout_alignBaseline="@+id/result"
+        android:layout_alignBottom="@+id/result"
+        android:layout_toStartOf="@+id/result"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FEFEFE"
+        android:text="Odds: 1.23"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:paddingLeft="15dp"
+        android:textColor="#FEFEFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip"
+        android:text="Tip:1"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FEFEFE"
+        android:text="Arsenal VS Barcelona"
+        android:layout_above="@+id/bet_outcome"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tvTeams" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FEFEFE"
+        android:id="@+id/date"
+        android:text="27th/07/2017"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FEFEFE"
+        android:id="@+id/time"
+        android:text="22:00"
+        android:layout_below="@+id/date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="England - Championship"
+        android:textColor="#FEF2FE"
+        android:layout_above="@+id/date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:id="@+id/textView3" />
+</RelativeLayout>
