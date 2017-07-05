@@ -1,6 +1,5 @@
 package com.janta.esir.megatips.models;
 
-import java.util.Date;
 
 /**
  * Created by esir on 03/07/2017.
@@ -8,25 +7,47 @@ import java.util.Date;
 
 public class Bet {
 
-    private Team TeamA;
-    private Team TeamB;
+    private String TeamA;
+    private String TeamB;
     private boolean favourite;
     private String leauge;
-    private Date date;
+    private String date;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    private String time;
     private String Tip;
     private float odds;
     private String results;
+    private String teamAFlag;
+    private String teamBFlag;
 
-    public void setTeamA(Team a){
+    public String getLeaugeFlag() {
+        return leaugeFlag;
+    }
+
+    public void setLeaugeFlag(String leaugeFlag) {
+        this.leaugeFlag = leaugeFlag;
+    }
+
+    private String leaugeFlag;
+
+    public void setTeamA(String a){
         this.TeamA = a;
     }
-    public Team getTeamA(){
+    public String getTeamA(){
         return TeamA;
     }
-    public void setTeamB(Team b){
+    public void setTeamB(String b){
         this.TeamB = b;
     }
-    public Team getTeamB(){
+    public String getTeamB(){
         return TeamB;
     }
     public void setLeauge(String leauge){
@@ -47,10 +68,10 @@ public class Bet {
     public String getTip(){
         return Tip;
     }
-    public void setDate(Date date){
+    public void setDate(String date){
         this.date = date;
     }
-    public Date getDate(){
+    public String getDate(){
         return date;
     }
     public void setOdds(float odds){
@@ -64,5 +85,21 @@ public class Bet {
     }
     public String getResults(){
         return results;
+    }
+
+    public String getTeamBFlag() {
+        return teamBFlag;
+    }
+
+    public void setTeamBFlag(String teamBFlag) {
+        this.teamBFlag = teamBFlag;
+    }
+
+    public String getTeamAFlag() {
+        return teamAFlag;
+    }
+
+    public void setTeamAFlag(String teamAFlag) {
+        this.teamAFlag = teamAFlag;
     }
 }

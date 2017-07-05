@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         // Manage titles
         bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
 
+        bottomNavigation.setBehaviorTranslationEnabled(true);
+
     // Use colored navigation with circle reveal effect
         bottomNavigation.setColored(false);
 
