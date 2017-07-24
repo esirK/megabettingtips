@@ -2,6 +2,9 @@ package com.janta.esir.megatips;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,11 +22,15 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.janta.esir.megatips.fragments.HomeFragment;
 import com.janta.esir.megatips.fragments.MyGamesFragment;
 import com.janta.esir.megatips.fragments.TopTipsFragment;
+import com.janta.esir.megatips.helper.SQLiteHandler;
+import com.janta.esir.megatips.helper.SessionManager;
 
 import static com.janta.esir.megatips.R.drawable.ic_home_black_24dp;
 
 public class MainActivity extends AppCompatActivity {
 
+    SessionManager session;
+    SQLiteHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Session Manager
+        session = new SessionManager(getApplicationContext());
+
+        //Sqlite Database Handler
+        db = new SQLiteHandler(getApplicationContext());
 
         //Fragments
         FragmentManager fragmentManager = getFragmentManager();
@@ -101,6 +113,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem logout = menu.findItem(R.id.action_logout);
+        MenuItem profile = menu.findItem(R.id.action_profile);
+        MenuItem settings = menu.findItem(R.id.action_settings);
+
+        invalidateOptionsMenu();
+        if (!session.isLoggedIn()) {
+            logout.setVisible(false);
+            profile.setVisible(false);
+            settings.setVisible(false);
+        }
         return true;
     }
 
@@ -113,7 +135,22 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //Toast.makeText(MainActivity.this, "Coming Up Next", Toast.LENGTH_SHORT).show();
+            Intent settings = new Intent(MainActivity.this, MyPreferencesActivity.class);
+            startActivity(settings);
             return true;
+        }
+        if (id == R.id.action_logout){
+            session.setLogin(false);
+            db.deleteUsers();
+            Toast.makeText(MainActivity.this, "GoodBye", Toast.LENGTH_SHORT).show();
+            Intent i = getIntent();
+            finish();
+            startActivity(i);
+        }
+        if (id == R.id.action_profile){
+            //Start Profile Activity
+            Toast.makeText(MainActivity.this, "Your Profile ", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);

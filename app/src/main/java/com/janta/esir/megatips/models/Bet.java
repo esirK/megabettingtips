@@ -9,7 +9,7 @@ public class Bet {
 
     private String TeamA;
     private String TeamB;
-    private boolean favourite;
+    private boolean favourite, win;
     private String leauge;
     private String date;
 
@@ -101,5 +101,13 @@ public class Bet {
 
     public void setTeamAFlag(String teamAFlag) {
         this.teamAFlag = teamAFlag;
+    }
+
+    public boolean isWin() {
+        return win;
+    }
+
+    public void setWin(boolean win) {
+        this.win = win;
     }
 }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="2dp"
+    android:elevation="3dp"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:paddingTop="5dp"
+        android:textSize="16dp"
+        android:textAlignment="center"
+        android:text="@string/note"
+        android:textColor="@color/colorAccent"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/MyRadioButton"
+        android:id="@+id/rg"
+        android:layout_below="@+id/note"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+        <RelativeLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="3dp"
+            >
+            <RadioButton
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic (KSH 50)"
+                android:id="@+id/basic_subscription"
+            />
+
+            <Switch
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto Renew"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/switchBasic" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:paddingLeft="3dp"
+            android:weightSum="2"
+            >
+
+            <Switch
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto Renew"
+                android:id="@+id/switchWeekly" />
+
+            <RadioButton
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly (KSH 100)"
+                android:id="@+id/weekly_subscription"
+                android:layout_alignBottom="@+id/switchWeekly"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="3dp"
+            >
+            <RadioButton
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly (KSH 500)"
+                android:id="@+id/monthly_subscription"
+                />
+
+            <Switch
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto Renew"
+                android:id="@+id/switchMonthly"
+                />
+        </RelativeLayout>
+        </LinearLayout>
+    </RadioGroup>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+</RelativeLayout>

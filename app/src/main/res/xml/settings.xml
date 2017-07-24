@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+    android:title="Nick Name"
+    android:key="username"
+    android:summary="Please Set A Nick Name"/>
+
+    <CheckBoxPreference android:title="Subscription renewal"
+        android:defaultValue="true"
+        android:summary="This option if selected will allow current subscription to be automatically renewed"
+        android:key="applicationUpdates" />
+    <ListPreference
+        android:title="Subscriptions Details"
+        android:summary="Select the kind of subscription that you like"
+        android:key="subscriptionType"
+        android:defaultValue="1"
+        android:entries="@array/subscriptions"
+        android:entryValues="@array/subscription_vals" />
+</PreferenceScreen>

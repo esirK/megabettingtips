@@ -1,6 +1,7 @@
 package com.janta.esir.megatips.adapters;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +26,7 @@ public class BetAdapter extends RecyclerView.Adapter<BetAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView teamA, teamB, leauge, date, odds, results, tip, time;
-        public ImageView teamAFlag, teamBFlag, leagueFlag;
+        public ImageView teamAFlag, teamBFlag, leagueFlag, fav, betOutCome;
 
         public MyViewHolder(View view ){
             super(view);
@@ -40,6 +41,9 @@ public class BetAdapter extends RecyclerView.Adapter<BetAdapter.MyViewHolder> {
             odds = (TextView) view.findViewById(R.id.textView2);
             results = (TextView) view.findViewById(R.id.result);
             time = (TextView) view.findViewById(R.id.time);
+            fav = (ImageView) view.findViewById(R.id.add_fav);
+            betOutCome = (ImageView) view.findViewById(R.id.bet_outcome);
+
         }
     }
 
@@ -64,6 +68,20 @@ public class BetAdapter extends RecyclerView.Adapter<BetAdapter.MyViewHolder> {
         holder.date.setText(bet.getDate());
         holder.leauge.setText(bet.getLeauge());
         holder.time.setText(bet.getTime());
+
+        if (bet.getFavourite()){
+            holder.fav.setColorFilter(ContextCompat.getColor(mContext, R.color.colorAccent));
+        }
+        if(bet.getResults() != null){
+            if (bet.isWin()){
+                holder.betOutCome.setColorFilter(ContextCompat.getColor(mContext, R.color.win));
+            }else {
+                holder.betOutCome.setColorFilter(ContextCompat.getColor(mContext, R.color.lost));
+            }
+        }else {
+            holder.results.setText(" _ : _");
+            holder.betOutCome.setColorFilter(ContextCompat.getColor(mContext, R.color.note_done));
+        }
         Glide.with(mContext).load(bet.getLeaugeFlag())
                 .placeholder(R.drawable.international_flag_of_planet_earth)
                 .fitCenter()

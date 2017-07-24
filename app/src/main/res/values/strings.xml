@@ -4,4 +4,13 @@
     <string name="home">Home</string>
     <string name="TopTips">Top Tips</string>
     <string name="MyGames">My Games</string>
+    <string name="sign_up">1.On your Safaricom phone go the M-PESA menu\n\n
+2.Select Lipa Na M-PESA and then select Buy Goods and Services.\n\n3.Enter the Till Number 768220.\n\n
+4. Enter the Amount Ksh. 50 (1 Day)/Ksh. 700 (1 Week)/Ksh. 1,000 (1 MONTH).\n\n
+5. Follow subsequent prompts to complete the transaction.\n\n
+6. You will receive a confirmation of the transaction via SMS.with USERNAME and PASSWORD Within minutes\n\n
+7. Login to your megabetingtips account and activate your plan\n\n
+8.By registering you agree to our terms and conditions .\n\n
+    </string>
+    <string name="note">Select Your Subscription Method\n Note: You Can Change Your Subscription Latter\n\n</string>
 </resources>

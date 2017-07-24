@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#FEFEFEFE"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFEFEF2"
+    android:gravity="center"
     >
 
     <TextView
@@ -20,26 +22,24 @@
         android:textColor="#4CAF50"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:id="@+id/button_login"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"
+        />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="or"
-        android:layout_below="@+id/button_login"
-        android:layout_centerInParent="true"
         android:id="@+id/textView4"
         android:textStyle="normal|bold" />
 
     <Button
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Signup"
         android:textColor="#4CAF50"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:id="@+id/button_signup"
-        android:layout_below="@+id/textView4"
-        android:layout_alignStart="@+id/button_login" />
+        android:id="@+id/button_signup" />
 
-</RelativeLayout>
+</LinearLayout>

@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/add_fav"
                 app:srcCompat="@drawable/ic_grade_black_24dp"
-                android:tint="@color/colorAccent"
+                android:tint="@color/iron"
                 />
 
             <TextView
